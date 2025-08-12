@@ -1,0 +1,12 @@
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore environment files
+.venv
+
+# Ignore stored messages folder
+stored/
+
+# Ignore output folder with fine-tuned models
+output_lora/
