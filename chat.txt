@@ -1,0 +1,7 @@
+{
+  "dialog": [
+    { "speaker": "User1", "content": "Привіт! Як справи?" },
+    { "speaker": "User2", "content": "Все добре, дякую." },
+    { "speaker": "User1", "content": "Підемо кави вип'ємо?" }
+  ]
+}
