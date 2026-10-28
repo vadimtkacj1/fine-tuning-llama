@@ -17,11 +17,11 @@ Supported speakers:
 ## 🛠 Technologies
 
 - **Python 3.10+**
-- **FastAPI** — REST API framework
-- **Hugging Face Transformers** — model loading and training
-- **PEFT (LoRA)** — parameter-efficient fine-tuning
-- **Datasets** — dataset creation
-- **Uvicorn** — ASGI server
+- **FastAPI**: REST API framework
+- **Hugging Face Transformers**: model loading and training
+- **PEFT (LoRA)**: parameter-efficient fine-tuning
+- **Datasets**: dataset creation
+- **Uvicorn**: ASGI server
 
 ---
 
@@ -155,7 +155,7 @@ Uploads a JSON file containing a dialogue and saves only the messages from the s
 
 **Form-data parameters:**
 
-- `file` — `.json` file, example:
+- `file`: `.json` file, example:
 
 ```json
 {
@@ -167,7 +167,7 @@ Uploads a JSON file containing a dialogue and saves only the messages from the s
 }
 ```
 
-- `speaker` — `"User1"` or `"User2"`
+- `speaker`: `"User1"` or `"User2"`
 
 **Example request:**
 
