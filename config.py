@@ -10,7 +10,8 @@ LORA_CONFIG = {
     'r': 8,
     'lora_alpha': 16,
     'target_modules': ["q_proj", "v_proj"],
-    'lora_dropout': 0.1
+    'lora_dropout': 0.1,
+    'task_type': 'CAUSAL_LM'
 }
 
 TRAINING_CONFIG = {

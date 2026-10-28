@@ -16,7 +16,7 @@ def setup_tokenizer() -> AutoTokenizer:
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_fast=False)
     
     if tokenizer.pad_token_id is None:
-        tokenizer.add_special_tokens({'pad_token': '[PAD]'})
+        tokenizer.pad_token = tokenizer.eos_token
     
     return tokenizer
 
@@ -31,7 +31,10 @@ def prepare_dataset(messages: List[str], tokenizer: AutoTokenizer) -> Dataset:
             padding='max_length',
             max_length=MAX_LENGTH
         )
-        tokenized['labels'] = tokenized['input_ids'].copy()
+        tokenized['labels'] = [
+            [token if keep else -100 for token, keep in zip(ids, mask)]
+            for ids, mask in zip(tokenized['input_ids'], tokenized['attention_mask'])
+        ]
         return tokenized
     
     dataset = dataset.map(tokenize_fn, batched=True, remove_columns=['text'])
